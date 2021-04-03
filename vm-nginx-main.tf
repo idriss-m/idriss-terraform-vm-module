@@ -2,6 +2,11 @@
 data "template_file" "nginx-vm-cloud-init" {
   template = file("install-nginx.sh")
 }
+
+resource "azurerm_resource_group" "network-rg" {
+  name = var.resource-group
+  location = var.location
+}
 # Create Network Security Group
 resource "azurerm_network_security_group" "nginx-vm-nsg" {
   depends_on=[azurerm_resource_group.network-rg]

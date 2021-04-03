@@ -48,6 +48,7 @@ resource "azurerm_subnet_network_security_group_association" "nginx-vm-nsg-assoc
 #   resource_group_name = azurerm_resource_group.network-rg.name
 #   allocation_method = "Static"
 # }
+
 # Create Network Card for the VM
 resource "azurerm_network_interface" "nginx-nic" {
   depends_on=[azurerm_resource_group.network-rg]

@@ -12,3 +12,7 @@ variable "nginx_admin_password" {
   type = string
   default = ""
 }
+variable "node_count" {
+  description = "The node count of the VMs"
+  type = number
+}
